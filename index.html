@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/styles.css" />
+    <title>SQL Injection example</title>
+  </head>
+  <body>
+    <h1>SQL Injection example</h1>
+
+    <form action="/api/login" method="post" id="myForm">
+      <input type="text" name="username" placeholder="username" />
+      <input type="text" name="password" placeholder="password" />
+
+      <input type="submit" name="submit" />
+    </form>
+
+    <h2>Server response</h2>
+    <div id="output"></div>
+
+    <script type="module" src="./script.ts"></script>
+  </body>
+</html>
