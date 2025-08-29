@@ -42,10 +42,10 @@ const server = serve({
         console.log('username: ', username)
         console.log('password: ', password)
 
-        const query = `SELECT * FROM users WHERE username = '${username}' AND password = '${password}';`
+        const query = `SELECT * FROM users WHERE username = $1 AND password = $2;`
         console.log('query:', query)
 
-        const res = await client.query(query)
+        const res = await client.query(query, [username, password])
         const user = res.rows.at(0)
 
         if (user == null) {
